@@ -1,0 +1,28 @@
+Waveform_Generator.xls
+
+This builds on the functionality of PS_24_Relays.xls and provides the following services:
+
+  Controlling Test Station "Waveform Generator" functions,
+  allowing to construct an "arbitrary" waveform and output
+  it on an analog output.
+
+  As of 10/18/2010 -- I'm just starting
+
+- - - - - - - -
+PS_24_Relays
+
+This builds on the functionality of CAN_wOut_TestFixtureDll.xls and provides the following services:
+
+  Controlling HV PS -- including modulating it on/off
+
+- - - - - - - - -
+CAN_wOut_TestFixtureDll.xls
+
+First working macro takiing to the test station using Kvaser DLL entirely without AMC_Testfixture.DLL.  This was a proof-of-concept.
+
+Unfortunately, this does NOT control HV_PS, Digital Outputs, and/or Relays, as suggested in the name -- that was the intent, but it was not implemented.
+
+Also, this implements an interface to the DLL that is compatible with old macro code which relied on the AMC-TestFixture.DLL.  On the plus side, that lets me use that old code.  On the minus side, it is in-elegant and clumsy, and doesn't present a clean interface to all capabilities available in the DLL.
+
+This also implements an internal log of CAN traffic, supplemented by high-level routines logging the intended function of subsequent CAN traffic.  I think it's a circular buffer, and it can be displayed on a separate page.
+

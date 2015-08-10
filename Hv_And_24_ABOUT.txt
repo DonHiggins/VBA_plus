@@ -1,0 +1,6 @@
+Hv_And_24.xls
+
+I think this is roughly equivalent to Speed_Up.xls.
+
+This appears to rely on TestFixture.DLL.  I think I was trying to craft a macro that would control the Test Station HV Power Supply, Relays, and Digital Inputs, as a tool to use durring a DVT Temperature study.  I was doing this around the time that I became aware that reliance on TestFixture.DLL was going to limit portability across different PCs, and so I was considering altering this module to use only the Kvaser DLL.  Evidently I didn't do that with Hv_And_24.xls.
+

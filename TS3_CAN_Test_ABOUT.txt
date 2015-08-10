@@ -1,0 +1,7 @@
+TS3_CAN_Test
+
+Lots of VBA to talk to TB3CMA . . .
+Load FPGA images into FLASH & Load FPGAs.
+Load Set I/O-Pin switches
+A-to-D
+D-to-A

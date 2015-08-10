@@ -1,0 +1,10 @@
+CAN_wOut_TestFixtureDll.xls
+
+First working macro takling to the test station using Kvaser DLL entirely without AMC_Testfixture.DLL.  This was a proof-of-concept.
+
+Unfortunately, this does NOT control HV_PS, Digital Outputs, and/or Relays, as suggested in the name -- that was the intent, but it was not implemented.
+
+Also, this implements an interface to the DLL that is compatible with old macro code which relied on the AMC-TestFixture.DLL.  On the plus side, that lets me use that old code.  On the minus side, it is in-elegant and clumsy, and doesn't present a clean interface to all capabilities available in the DLL.
+
+This also implements an internal log of CAN traffic, supplemented by high-level routines logging the intended function of subsequent CAN traffic.  I think it's a circular buffer, and it can be displayed on a separate page.
+

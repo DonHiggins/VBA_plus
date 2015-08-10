@@ -1,0 +1,6 @@
+Agilent_RS232_via_WinAPI_005
+
+This communicates with my Agilent/HP oscilloscope over RS232.
+Agilent 54622D.
+It is interesting because it makes API DLL calls to do RS232 communications.
+It works on Windows XP, I don't know about other operating systems.

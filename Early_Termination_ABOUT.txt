@@ -1,0 +1,25 @@
+Early_Termination
+
+This is a facility I cooked up, because VBA is sort of single-threaded
+and won't let Excel recognise button clicks while VBA is executing.
+Hence you can't click a button to cancel or halt execution of a VBA macro.
+So this facility lets you click a button to exit out of a loop
+you may get stuck in.  Here's how it works.
+
+Within the loop you may get stuck in (ex: "For" loop), add the line:
+
+      If (Request_For_Early_Termination()) Then Exit For
+
+And include the Early_Termination module in your VBA code in your workbook.
+The Request_For_Early_Termination() checks for existance of an 
+"c:\aaa\terminate.*" file on your disk.  So if it doesn't find it, your
+VBA program continues looping.  But if it does find such a file, it 
+takes it as a sign to exit out of its loop.
+
+At the same time as you run your VBA code in one Excel workbook, also start a separate 
+instance of Excel in a separate window, and run the Early_Termination.XLS  workbook there.
+Early_Termination.XLS presents a button, and when you click it, it creates the "c:\aaa\terminate.txt"
+file on disk, signalling your other VBA program to break out of its loop.
+
+For an example of an application using Request_For_Early_Termination() function,
+see TS3_CAN_Test.xls.

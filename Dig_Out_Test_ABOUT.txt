@@ -1,0 +1,7 @@
+Dig_Out_Test
+
+This talks CANOpen to the Test Station.
+It has fully functioning Digital Outputs which work on TBIOMD and also TB3IOMB.
+It also has support got Differential In & Out, these wotk on TB3IOMB, and also TBIOMD.
+It has Digital Input support, which may be speciffic to TB3IOMB, 
+and will have to change for TB3IOMC.
