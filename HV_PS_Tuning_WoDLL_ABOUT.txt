@@ -1,0 +1,9 @@
+HV_PS_Tuning_WoDLL.xls
+
+- - - - - 8/27/2015 -- DH - - - - - - - - - - - - -
+
+Attempting to reserect the old PS_PID.xls program without reliance on TestFixture.DLL, but talking
+directly to the Kvasser DLL.
+
+I'm starting with a non-dll version of Waveform_Generator.xls.
+Then manually copying features from PS_PIC.xls.
