@@ -1,0 +1,17 @@
+About_Pin_Assignments_v01
+
+This VBS program was developped when I discovered that in order to assign a connector shell to a net (signal) that ViewDraw wanted me to use the GUI to modify every single pin in the connector.  For example, in a 62 pin connector, I had to modify each of the 62 pins, telling them to connect a net, for example "CHASSIS_G," to pin "63," the phantom pin representing the connector shell.
+
+Hopefully this program can do that automatically and much more reliably.  Be careful though, as I has to guess at some of the fields in the schematic file format.  Also this program works for simple cases, but may require more work to gandle general cases.  For example, if the connector has more than one shell connection, this probably won't worh without modifications.
+
+OPERATIONS:
+
+1) Pop Ups ask for path to the schematic and fo the schematic file name -- that includes the sheet number file extension.
+
+2) we read only that one schematic sheet, and display a list of components found in the sheet.  Note the list of components is written to a text file in the same directory as the VBS program, and is automatically opened in Notepad for viewing.
+
+3) User is asked to select one of the components.
+
+4) User is asked for Signal name (eg:"CHASSIS_G") and pin # (eg:"63").
+
+5) We open an output file, using the input file name and adding "_PA" to the file extension. We read through the input file, copying records to the output file, and adding attribute records to every instance of the component.  Hopefully this has the desired effect.

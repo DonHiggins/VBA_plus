@@ -1,0 +1,29 @@
+About_Pin_Assignments_v02
+
+This VBS program was developped when I discovered that in order to assign a connector shell to a net (signal) that ViewDraw wanted me to use the GUI to modify every single pin in the connector.  For example, in a 62 pin connector, I had to modify each of the 62 pins, telling them to connect a net, for example "CHASSIS_G," to pin "63," the phantom pin representing the connector shell.
+
+Hopefully this program can do that automatically and much more reliably.  Be careful though, as I had to guess at some of the fields in the schematic file format.  Also this program works for simple cases, but may require more work to handle general cases.  For example, if the connector has more than one shell connection, this probably won't work without modifications.
+
+Version v01 only adds "SIGNAL=<net name>;<pin#> attributes, useful for when you are specifying the shell connections on a connector. 
+
+Version v02 adds ability to add "TABLE=TB<#>" attributes.  After doing version v01, Raffi informed me that every single pin on the connectors needed to be assigned to TB2 for thru-hole connectors.
+
+Whereas v01 assumed that the component "I" record was immediately followed by a "REFDES=" attribute record, v02 addopted a different approach.  V02 takes everything it needs from the component "I" record then adds a following "A" attribute record for either a SIGNAL= or TABLE= attribute. 
+
+OPERATIONS:
+
+1) Pop Ups ask for path to the schematic and for the schematic file name -- that includes the sheet number file extension.
+
+   DEFAULTS TO:
+     G:\ECAD\Projects\Aut_TS3\TB3IOM\TB3IOMB_Pin_Assignment\sch
+     TB3_Connectors.1
+
+1.A) Popup asks if you want to add "SIGNAL=" or TBLE=" attributes.
+
+2) we read only that one schematic sheet, and display a list of components found in the sheet.  Note the list of components is written to a text file in the same directory as the VBS program, and is automatically opened in Notepad for viewing.
+
+3) User is asked to select one of the components.
+
+4) User is asked for Signal name (eg:"CHASSIS_G") and pin # (eg:"63"). OR for a Table # (eg:"2").
+
+5) We open an output file, using the input file name and adding "_PA" (for "pin assignmemnt") to the file extension. We read through the input file, copying records to the output file, and adding attribute records to every instance of the component.  Hopefully this has the desired effect.

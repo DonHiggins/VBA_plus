@@ -1,0 +1,31 @@
+Wav_File_Splitter_v3.vbs
+
+This program read a WAV format audio file and splits it into multiple files. There are two principal options: either
+
+1. split into multiple, equal length files, or
+
+2. split into 2 files at a given point in time in the file.
+
+For example I use the 1st option if I have a 60-minute audio file of a person speaking, and I want to split it into a bunch of 5-minute tracks, for quicker access as I'm listening through the file.
+
+I use the 2nd option as a crude way to excerpt "sound bytes" out of a longer speech.
+
+TO OPERATE
+
+Run the macro, I usually double-click on the VBS file in Windows Explorer.  
+
+It asks you to specify first the path to the folder containing the WAV file, and then the file name of the .WAV file.
+
+It asks for an "OK before parsing it.
+
+Then it reads the file header and displays some header info -- this was useful when I was debugging the program, but not necessary for it's core function of file splitting.
+
+Then it gives you the option to
+1 Split the file into equal length segments, or
+2 Split the file at a point in time
+
+Continuing, it asks the relevant questions, and produces output files by appenfing numerals onto the original file name.  For example "Fishing_Epic_by_Kevin_Kling.wav" is parsed to produce 2 output files, "Fishing_Epic_by_Kevin_Kling_01.wav", and "Fishing_Epic_by_Kevin_Kling_02.wav".
+
+
+
+

@@ -1,0 +1,15 @@
+TS3_DSP_Timestamp.VBS
+
+Does an automatic edit on source file recording timestamp and version info, that is subsequently compiled into the DSP code.
+
+Reads the "TimeStamp.c" file, in the same folder as the "TS3_DSP_Timestamp.vbs" file.  Edits the following section supplying current system date and time, and incrementing the "C" octet of the version.
+
+
+
+// Automatic edit changes this version and timestamp, in compatible format to FPGA timestamps
+// we have a CAN command to read timestamp and version information
+const Uint16 timeStamp_t1 = 0x1510; // BCD YYMM (0x1504 => 2015 April)
+const Uint16 timeStamp_t2 = 0x1414; // BCD DDHr (0x2315 => 23rd day of month, 3 pm)
+const Uint16 timeStamp_t3 = 0x36A5; // BCD MnA5 (0x25A5 => 25 min past the hour, A5 is a constant)
+const Uint16 revision_rv1 = 0x0101; // 2 binary bytes A.B
+const Uint16 revision_rv2 = 0x3800; // 2 binary bytes C.0 (version is A.B.C, 0 indicates DSP)

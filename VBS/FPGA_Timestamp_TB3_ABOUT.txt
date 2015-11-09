@@ -1,0 +1,21 @@
+FPGA_Timestamp_TB3.vbs
+
+This program automatically edits FPGA code with current system date & time and optionally it increments the version.
+
+I keep a copy of the vbs file, "FPGA_Timestamp_TB3.vbs" in the same folder as my FPGA code, my .V vericode files.
+
+It looks for the Address_Bud_Defs.v file, and automatically updates current system date and time into this section:
+
+
+//////////////////////////////////////////////////////////////////////////////////
+// Automatic Timestamp and Revision Values 
+//    Following values are automatically edited by FPGA_Timestamp_TB3.vbs 
+//////////////////////////////////////////////////////////////////////////////////
+
+    parameter [15:0]FW_TIMESTAMP_VALUE_1  = 16'h1510;   // YYMM: For ex 8'h1512 = 2015, Dec  (BCD)
+    parameter [15:0]FW_TIMESTAMP_VALUE_2  = 16'h1610;   // DDHr: For ex 8'h2313 = 23rd day at 1pm
+    parameter [15:0]FW_TIMESTAMP_VALUE_3  = 16'h05A5;   // MnA5: For ex 8'h59A5 = 59 minutes, A5 is a constant
+    parameter [15:0]FW_REVISION_VALUE_1  = 16'h0102;    // For ex 8'h0A25 . . .
+    parameter [15:0]FW_REVISION_VALUE_2  = 16'h1102;    // 8'h0701 . . . Rev 10.037.07 Fpga#1 (Strictly hex bytes)
+
+It also gives the user the option to increment the 3rd octet of the version information.
