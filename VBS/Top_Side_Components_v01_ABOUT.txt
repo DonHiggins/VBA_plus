@@ -1,0 +1,11 @@
+' Top_Side_Components (from Wav_File_Splitter_V3.vbs, and Pin_Assignments.vbs)
+'   -- User Selects a file to open -- a ViewDraw schematic file -- typically the 1st sheet in the schematic.
+'      We search out bottom-side components: R & C, 1206/805/603, horiz/vert,
+'      And we substitute the  corresponding top-side component.
+'      User is given the option to either leave RefDes designations as they are, or else "reset"
+'      the RefDes on all formerly bottom-side R's & C's.  In other words, reset the refdes to
+'      one appropriate for a top-side component, but not yet assigned : R?, RS?, RE?, C?, CS?, or CE?.
+'      User also gets an option to put output files into a separate folder, or to append "_ST" to the 
+'      basic file name and write the output to the same folder as the input.
+'      As of 2015, we no longer do wave-solder on bottom side of boards at AMC, consequently we no longer 
+'      need bottom-side components with extra surrounding space to accommodate wave-solder. 
